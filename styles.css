@@ -1,0 +1,242 @@
+/* Modern Social Links with iPhone-like Glass Effect */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-image: url('wallpaper.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: -1;
+}
+
+.iphone-container {
+    width: 100%;
+    max-width: 380px;
+    min-height: 700px;
+    background: rgba(18, 18, 18, 0.7);
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.content {
+    padding: 40px 25px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3);
+    overflow: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: linear-gradient(to right, #00e5ff, #00b8d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.profile p {
+    font-size: 16px;
+    color: #aaa;
+    text-align: center;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.link-card:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+.facebook {
+    background: #1877F2;
+}
+
+.tiktok {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
+
+.tiktok::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #00f2ea, #ff0050);
+    z-index: -1;
+}
+
+.behance {
+    background: #053eff;
+    color: white;
+}
+
+.link-text {
+    flex: 1;
+}
+
+.link-text span {
+    font-size: 12px;
+    color: #aaa;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.link-text h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.arrow {
+    color: #00e5ff;
+    font-size: 14px;
+}
+
+footer {
+    margin-top: auto;
+    text-align: center;
+    color: #555;
+    font-size: 12px;
+}
+
+/* Cyan Glow Effect */
+.iphone-container::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 229, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+}
+
+.iphone-container::after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 229, 255, 0.2);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+    .iphone-container {
+        border-radius: 30px;
+    }
+    
+    .notch {
+        width: 120px;
+        height: 25px;
+    }
+    
+    .content {
+        padding: 50px 20px 20px;
+    }
+    
+    .avatar {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .avatar i {
+        font-size: 40px;
+    }
+}
